@@ -60,8 +60,8 @@ export default function Home() {
     socket.emit("leave-room", room);
   }
   return (
-    <div className="flex max-md:flex-col-reverse md:justify-around md:gap-8 gap-6 items-center sm:items-start w-full md:p-10 max-md:px-2">
-      <div className="md:h-[80vh] justify-end items-center md:p-10 gap-6 p-3 mt-3 flex flex-col">
+    <div className="flex max-md:flex-col-reverse md:justify-around md:gap-8 gap-4 items-center sm:items-start w-full md:p-10 max-md:px-2">
+      <div className="md:h-[80vh] max-md:bg-black max-md:fixed max-md:bottom-0 justify-end items-center md:p-10 gap-5 p-3 md:mt-3 flex flex-col">
         {
           isRoom ?
             <div className='flex gap-6 w-full justify-center items-center'>
@@ -79,14 +79,14 @@ export default function Home() {
           <button className='text-black bg-white px-5 py-1 rounded-xl' onClick={sendData}>Send</button>
         </div>
       </div>
-      <div className="md:w-1/2 w-full h-[80vh]">
+      <div className="md:w-1/2 w-full md:h-[80vh] h-2/3">
         {
           isRoom ?
             <div>
-              <h2 className="text-center text-xl font-bold">
+              <h2 className="text-center text-xl font-bold py-2">
                 {`${room} Chat`}
               </h2>
-              <div className='flex flex-col gap-2 md:mt-10 w-full h-[80vh] overflow-y-auto border-2 shadow-slate-800 shadow-md hover:shadow-2xl hover:shadow-slate-800 border-slate-600 rounded-xl p-10'>
+              <div className='flex flex-col gap-2 md:mt-10 w-full md:h-[80vh] h-full overflow-y-auto md:border-2 md:shadow-slate-800 md:shadow-md md:hover:shadow-2xl md:hover:shadow-slate-800 md:border-slate-600 rounded-xl p-10'>
                 {
                   roomMessages.map((message: any, index: number) => <div className={`${message.id === socket.id ? "self-start bg-white text-black" : "self-end bg-emerald-600 text-white"} rounded-full px-5 py-2 w-fit h-fit`} key={index}>{message.text}</div>)
                 }
@@ -97,7 +97,7 @@ export default function Home() {
               <h2 className="text-center text-xl font-bold py-2">
                 General Chat
               </h2>
-              <div className='flex flex-col gap-2 md:mt-10 w-full h-[80vh] overflow-y-auto border-2 shadow-slate-800 shadow-md hover:shadow-2xl hover:shadow-slate-800 border-slate-600 rounded-xl p-10'>
+              <div className='flex flex-col gap-2 md:mt-10 w-full md:h-[80vh] h-full overflow-y-auto md:border-2 md:shadow-slate-800 md:shadow-md md:hover:shadow-2xl md:hover:shadow-slate-800 md:border-slate-600 rounded-xl p-10'>
                 {
                   messages.map((message: any, index: number) => <div className={`${message.id === socket.id ? "self-start bg-white text-black" : "self-end bg-emerald-600 text-white"} rounded-full px-5 py-2 w-fit h-fit`} key={index}>{message.text}</div>)
                 }
