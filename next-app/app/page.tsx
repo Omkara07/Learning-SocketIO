@@ -61,7 +61,7 @@ export default function Home() {
   }
   return (
     <div className="flex max-md:flex-col-reverse md:justify-around md:gap-8 gap-4 items-center sm:items-start w-full md:p-10 max-md:px-2">
-      <div className="md:h-[80vh] max-md:bg-black max-md:fixed max-md:bottom-0 justify-end items-center md:p-10 gap-5 p-3 md:mt-3 flex flex-col">
+      <div className="md:h-[80vh] max-md:p-3 max-md:w-full max-md:bg-black max-md:fixed max-md:bottom-0 justify-end items-center md:p-10 gap-5 p-3 md:mt-3 flex flex-col">
         {
           isRoom ?
             <div className='flex gap-6 w-full justify-center items-center'>
