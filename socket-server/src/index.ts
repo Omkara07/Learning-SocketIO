@@ -13,6 +13,8 @@ app.get("/", (req: Request, res: Response) => {
 const io = new Server(server, {
     cors: {
         origin: "*",
+        methods: ["GET", "POST"],
+        credentials: true
     }
 });
 // Socket.io connection handling
